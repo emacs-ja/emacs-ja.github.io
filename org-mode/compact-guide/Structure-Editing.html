@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <!-- Created by GNU Texinfo 6.8, https://www.gnu.org/software/texinfo/ --><!-- Mirrored from orgmode.org/guide/Structure-Editing.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 26 Nov 2022 11:38:10 GMT --><!-- Added by HTTrack -->
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <!-- /Added by HTTrack -->
+    <!-- Copyright (C) 2004-2022  Free Software Foundation, Inc.
+Permission is granted to copy, distribute and/or modify this documentunder the terms of the GNU Free Documentation License, Version 1.3 orany later version published by the Free Software Foundation; with noInvariant Sections, with the Front-Cover Texts being "A GNU Manual,"and with the Back-Cover Texts as in (a) below.  A copy of the licenseis included in the section entitled "GNU Free Documentation License."in the full Org manual, which is distributed together with thiscompact guide.(a) The FSF's Back-Cover Text is: "You have the freedom to copy andmodify this GNU manual." -->
+    <title>Structure Editing (Org Mode Compact Guide)</title>
+    <meta name="description" content="Structure Editing (Org Mode Compact Guide)">
+    <meta name="keywords" content="Structure Editing (Org Mode Compact Guide)">
+    <meta name="resource-type" content="document">
+    <meta name="distribution" content="global">
+    <meta name="Generator" content="makeinfo">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link href="index-2.html" rel="start" title="Top">
+    <link href="index-2.html#SEC_Contents" rel="contents" title="Table of Contents">
+    <link href="Document-Structure.html" rel="up" title="Document Structure">
+    <link href="Sparse-Trees.html" rel="next" title="Sparse Trees">
+    <link href="Motion.html" rel="prev" title="Motion">
+    <style type="text/css">
+<!--
+a.copiable-anchor {visibility: hidden; text-decoration: none; line-height: 0em}
+a.summary-letter {text-decoration: none}
+blockquote.indentedblock {margin-right: 0em}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+kbd {font-style: oblique}
+pre.display {font-family: inherit}
+pre.format {font-family: inherit}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+span.nolinebreak {white-space: nowrap}
+span.roman {font-family: initial; font-weight: normal}
+span.sansserif {font-family: sans-serif; font-weight: normal}
+span:hover a.copiable-anchor {visibility: visible}
+ul.no-bullet {list-style: none}
+-->
+</style> <link rel="stylesheet" type="text/css" href="https://www.gnu.org/software/emacs/manual.css">
+  </head>
+  <body lang="en">
+    <div class="section" id="Structure-Editing">
+      <div class="header">
+        <p> Next: <a href="Sparse-Trees.html" accesskey="n" rel="next">Sparse
+            Trees</a>, Previous: <a href="Motion.html" accesskey="p" rel="prev">Motion</a>,
+          Up: <a href="Document-Structure.html" accesskey="u" rel="up">Document
+            Structure</a> &nbsp; [<a href="index-2.html#SEC_Contents" title="Table of contents"
+            rel="contents">Contents</a>]</p>
+      </div>
+      <hr> <span id="Structure-Editing-1"></span>
+      <h3 class="section">2.4 Structure Editing💡構造編集</h3>
+      <dl compact="compact">
+        <dt><span><kbd>M-<span class="key">RET</span></kbd></span></dt>
+        <dd>
+          <p>Insert new heading with same level as current. If point is in a
+            plain list item, a new item is created (see <a href="Plain-Lists.html">Plain
+              Lists</a>). When this command is used in the middle of a line, the
+            line is split and the rest of the line becomes the new headline<a id="DOCF2"
+              href="#FOOT2"><sup>2</sup></a>. <br>
+            💡現在と同じレベルの新しい見出しを挿入します。point がプレーンリストの項目にある場合、新しい項目が作成されます（<a href="Plain-Lists.html">Plain
+              Lists ＝💡プレーンリスト)</a>を参照）。このコマンドが行の途中で使用された場合、行は分割され、残りの行が新しい見出し
+            になります。e<a id="DOCF2" href="#FOOT2"><sup>2</sup></a></p>
+        </dd>
+        <dt><span><kbd>M-S-<span class="key">RET</span></kbd></span></dt>
+        <dd>
+          <p>Insert new TODO entry with same level as current heading. <br>
+            💡現在の見出しと同じレベルの新しいTODO項目を挿入します。</p>
+        </dd>
+        <dt><span><kbd><span class="key">TAB</span></kbd> in new empty entry
+            (💡新しい空のエントリでTAB)<br>
+          </span></dt>
+        <dd>
+          <p>In a new entry with no text yet, <kbd><span class="key">TAB</span></kbd>
+            cycles through reasonable levels. <br>
+            💡テキストがまだない新しいエントリでは、TABはレベルを循環させます。</p>
+        </dd>
+        <dt><span><kbd>M-<span class="key">LEFT</span></kbd></span></dt>
+        <dt><span><kbd>M-<span class="key">RIGHT</span></kbd></span></dt>
+        <dd>
+          <p>Promote or demote current heading by one level. <br>
+            💡現在の見出しを1段階昇格または降格させる。</p>
+        </dd>
+        <dt><span><kbd>M-<span class="key">UP</span></kbd></span></dt>
+        <dt><span><kbd>M-<span class="key">DOWN</span></kbd></span></dt>
+        <dd>
+          <p>Move subtree up or down, i.e., swap with previous or next subtree
+            of same level. <br>
+            💡サブツリーを上下に移動させる。つまり、同じレベルの前または次のサブツリーと交換する。</p>
+        </dd>
+        <dt><span><kbd>C-c C-w</kbd></span></dt>
+        <dd>
+          <p>Refile entry or region to a different location. See <a href="Refile-and-Copy.html">Refile
+              and Copy</a>. <br>
+            💡エントリまたはリージョンを別の場所に整頓する。<a href="Refile-and-Copy.html">Refile and
+              Copy</a>を参照してください。</p>
+        </dd>
+        <dt><span><kbd>C-x n s</kbd></span></dt>
+        <dt><span><kbd>C-x n w</kbd></span></dt>
+        <dd>
+          <p>Narrow buffer to current subtree and widen it again. <br>
+            💡バッファを現在のサブツリーまで狭め(narrow)、再び広げる(widen)。</p>
+        </dd>
+      </dl>
+      <p>When there is an active region (Transient Mark mode), promotion and
+        demotion work on all headlines in the region. <br>
+        💡アクティブなリージョンがある場合（Transient Markモード）、昇格・降格はリージョン内のすべてのヘッドラインに作用します。</p>
+    </div>
+    <div class="footnote">
+      <hr>
+      <h4 class="footnotes-heading">Footnotes💡脚注</h4>
+      <h5><a id="FOOT2" href="#DOCF2">(2)</a></h5>
+      <p>If you do not want the line to be split, customize the variable <code>org-M-RET-may-split-line</code>.<br>
+        💡行を分割したくない場合は、org-M-RET-may-split-line変数をカスタマイズしてください。</p>
+    </div>
+  </body>
+  <!-- Mirrored from orgmode.org/guide/Structure-Editing.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 26 Nov 2022 11:38:10 GMT -->
+</html>

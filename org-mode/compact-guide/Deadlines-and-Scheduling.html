@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created by GNU Texinfo 6.8, https://www.gnu.org/software/texinfo/ -->
+
+<!-- Mirrored from orgmode.org/guide/Deadlines-and-Scheduling.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 26 Nov 2022 11:38:10 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- Copyright (C) 2004-2022  Free Software Foundation, Inc.
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.3 or
+any later version published by the Free Software Foundation; with no
+Invariant Sections, with the Front-Cover Texts being "A GNU Manual,"
+and with the Back-Cover Texts as in (a) below.  A copy of the license
+is included in the section entitled "GNU Free Documentation License."
+in the full Org manual, which is distributed together with this
+compact guide.
+
+(a) The FSF's Back-Cover Text is: "You have the freedom to copy and
+modify this GNU manual."
+ -->
+<title>Deadlines and Scheduling (Org Mode Compact Guide)</title>
+
+<meta name="description" content="Deadlines and Scheduling (Org Mode Compact Guide)">
+<meta name="keywords" content="Deadlines and Scheduling (Org Mode Compact Guide)">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="makeinfo">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<link href="index-2.html" rel="start" title="Top">
+<link href="index-2.html#SEC_Contents" rel="contents" title="Table of Contents">
+<link href="Dates-and-Times.html" rel="up" title="Dates and Times">
+<link href="Clocking-Work-Time.html" rel="next" title="Clocking Work Time">
+<link href="Creating-Timestamps.html" rel="prev" title="Creating Timestamps">
+<style type="text/css">
+<!--
+a.copiable-anchor {visibility: hidden; text-decoration: none; line-height: 0em}
+a.summary-letter {text-decoration: none}
+blockquote.indentedblock {margin-right: 0em}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+kbd {font-style: oblique}
+pre.display {font-family: inherit}
+pre.format {font-family: inherit}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+span.nolinebreak {white-space: nowrap}
+span.roman {font-family: initial; font-weight: normal}
+span.sansserif {font-family: sans-serif; font-weight: normal}
+span:hover a.copiable-anchor {visibility: visible}
+ul.no-bullet {list-style: none}
+-->
+</style>
+<link rel="stylesheet" type="text/css" href="https://www.gnu.org/software/emacs/manual.css">
+
+
+</head>
+
+<body lang="en">
+<div class="section" id="Deadlines-and-Scheduling">
+<div class="header">
+<p>
+Next: <a href="Clocking-Work-Time.html" accesskey="n" rel="next">Clocking Work Time</a>, Previous: <a href="Creating-Timestamps.html" accesskey="p" rel="prev">Creating Timestamps</a>, Up: <a href="Dates-and-Times.html" accesskey="u" rel="up">Dates and Times</a> &nbsp; [<a href="index-2.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+</div>
+<hr>
+<span id="Deadlines-and-Scheduling-1"></span><h3 class="section">8.3 Deadlines and Scheduling</h3>
+
+<p>A timestamp may be preceded by special keywords to facilitate
+planning:
+</p>
+<dl compact="compact">
+<dt><span><kbd>C-c C-d</kbd></span></dt>
+<dd><p>Insert &lsquo;<samp>DEADLINE</samp>&rsquo; keyword along with a time stamp, in the line
+following the headline.
+</p>
+<p>Meaning: the task&mdash;most likely a TODO item, though not
+necessarily&mdash;is supposed to be finished on that date.
+</p>
+<p>On the deadline date, the task is listed in the agenda.  In
+addition, the agenda for <em>today</em> carries a warning about the
+approaching or missed deadline, starting <code>org-deadline-warning-days</code>
+before the due date, and continuing until the entry is marked as
+done.  An example:
+</p>
+<div class="example">
+<pre class="example">*** TODO write article about the Earth for the Guide
+    DEADLINE: &lt;2004-02-29 Sun&gt;
+    The editor in charge is [[bbdb:Ford Prefect]]
+</pre></div>
+
+</dd>
+<dt><span><kbd>C-c C-s</kbd></span></dt>
+<dd><p>Insert &lsquo;<samp>SCHEDULED</samp>&rsquo; keyword along with a stamp, in the line following
+the headline.
+</p>
+<p>Meaning: you are planning to start working on that task on the given
+date<a id="DOCF7" href="#FOOT7"><sup>7</sup></a>.
+</p>
+<p>The headline is listed under the given date<a id="DOCF8" href="#FOOT8"><sup>8</sup></a>.  In addition,
+a reminder that the scheduled date has passed is present in the
+compilation for <em>today</em>, until the entry is marked as done, i.e.,
+the task is automatically forwarded until completed.
+</p>
+<div class="example">
+<pre class="example">*** TODO Call Trillian for a date on New Years Eve.
+    SCHEDULED: &lt;2004-12-25 Sat&gt;
+</pre></div>
+</dd>
+</dl>
+
+<p>Some tasks need to be repeated again and again.  Org mode helps to
+organize such tasks using a so-called repeater in a &lsquo;<samp>DEADLINE</samp>&rsquo;,
+&lsquo;<samp>SCHEDULED</samp>&rsquo;, or plain timestamps.  In the following example:
+</p>
+<div class="example">
+<pre class="example">** TODO Pay the rent
+   DEADLINE: &lt;2005-10-01 Sat +1m&gt;
+</pre></div>
+
+<p>the &lsquo;<samp>+1m</samp>&rsquo; is a repeater; the intended interpretation is that the task
+has a deadline on &lsquo;<samp>&lt;2005-10-01&gt;</samp>&rsquo; and repeats itself every (one) month
+starting from that time.
+</p>
+</div>
+<div class="footnote">
+<hr>
+<h4 class="footnotes-heading">Footnotes</h4>
+
+<h5><a id="FOOT7" href="#DOCF7">(7)</a></h5>
+<p>This is quite different from what is normally understood by
+<em>scheduling a meeting</em>, which is done in Org by just inserting a time
+stamp without keyword.</p>
+<h5><a id="FOOT8" href="#DOCF8">(8)</a></h5>
+<p>It will still be listed on that date after it has been marked
+as done.  If you do not like this, set the variable
+<code>org-agenda-skip-scheduled-if-done</code>.</p>
+</div>
+<hr>
+<div class="header">
+<p>
+Next: <a href="Clocking-Work-Time.html">Clocking Work Time</a>, Previous: <a href="Creating-Timestamps.html">Creating Timestamps</a>, Up: <a href="Dates-and-Times.html">Dates and Times</a> &nbsp; [<a href="index-2.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+</div>
+
+
+
+</body>
+
+<!-- Mirrored from orgmode.org/guide/Deadlines-and-Scheduling.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 26 Nov 2022 11:38:10 GMT -->
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created by GNU Texinfo 6.8, https://www.gnu.org/software/texinfo/ -->
+
+<!-- Mirrored from orgmode.org/guide/Capture.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 26 Nov 2022 11:38:10 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- Copyright (C) 2004-2022  Free Software Foundation, Inc.
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.3 or
+any later version published by the Free Software Foundation; with no
+Invariant Sections, with the Front-Cover Texts being "A GNU Manual,"
+and with the Back-Cover Texts as in (a) below.  A copy of the license
+is included in the section entitled "GNU Free Documentation License."
+in the full Org manual, which is distributed together with this
+compact guide.
+
+(a) The FSF's Back-Cover Text is: "You have the freedom to copy and
+modify this GNU manual."
+ -->
+<title>Capture (Org Mode Compact Guide)</title>
+
+<meta name="description" content="Capture (Org Mode Compact Guide)">
+<meta name="keywords" content="Capture (Org Mode Compact Guide)">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="makeinfo">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<link href="index-2.html" rel="start" title="Top">
+<link href="index-2.html#SEC_Contents" rel="contents" title="Table of Contents">
+<link href="Capture-Refile-Archive.html" rel="up" title="Capture Refile Archive">
+<link href="Refile-and-Copy.html" rel="next" title="Refile and Copy">
+<style type="text/css">
+<!--
+a.copiable-anchor {visibility: hidden; text-decoration: none; line-height: 0em}
+a.summary-letter {text-decoration: none}
+blockquote.indentedblock {margin-right: 0em}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+kbd {font-style: oblique}
+pre.display {font-family: inherit}
+pre.format {font-family: inherit}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+span.nolinebreak {white-space: nowrap}
+span.roman {font-family: initial; font-weight: normal}
+span.sansserif {font-family: sans-serif; font-weight: normal}
+span:hover a.copiable-anchor {visibility: visible}
+ul.no-bullet {list-style: none}
+-->
+</style>
+<link rel="stylesheet" type="text/css" href="https://www.gnu.org/software/emacs/manual.css">
+
+
+</head>
+
+<body lang="en">
+<div class="section" id="Capture">
+<div class="header">
+<p>
+Next: <a href="Refile-and-Copy.html" accesskey="n" rel="next">Refile and Copy</a>, Up: <a href="Capture-Refile-Archive.html" accesskey="u" rel="up">Capture, Refile, Archive</a> &nbsp; [<a href="index-2.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+</div>
+<hr>
+<span id="Capture-1"></span><h3 class="section">9.1 Capture</h3>
+
+<p>Capture lets you quickly store notes with little interruption of your
+work flow.  You can define templates for new entries and associate
+them with different targets for storing notes.
+</p>
+<span id="Setting-up-capture"></span><span id="Setting-up-capture-1"></span><h4 class="subheading">Setting up capture</h4>
+
+<p>The following customization sets a default target<a id="DOCF9" href="#FOOT9"><sup>9</sup></a> file for notes.
+</p>
+<div class="example lisp">
+<pre class="lisp">(setq org-default-notes-file (concat org-directory &quot;/notes.org&quot;))
+</pre></div>
+
+<p>You may also define a global key for capturing new material (see
+<a href="Introduction.html#Activation">Activation</a>).
+</p>
+<span id="Using-capture"></span><span id="Using-capture-1"></span><h4 class="subheading">Using capture</h4>
+
+<dl compact="compact">
+<dt><span><kbd>M-x org-capture</kbd></span></dt>
+<dd><p>Start a capture process, placing you into a narrowed indirect buffer
+to edit.
+</p>
+</dd>
+<dt><span><kbd>C-c C-c</kbd></span></dt>
+<dd><p>Once you have finished entering information into the capture buffer,
+<kbd>C-c C-c</kbd> returns you to the window configuration before
+the capture process, so that you can resume your work without
+further distraction.
+</p>
+</dd>
+<dt><span><kbd>C-c C-w</kbd></span></dt>
+<dd><p>Finalize the capture process by refiling the note to a different
+place (see <a href="Refile-and-Copy.html">Refile and Copy</a>).
+</p>
+</dd>
+<dt><span><kbd>C-c C-k</kbd></span></dt>
+<dd><p>Abort the capture process and return to the previous state.
+</p></dd>
+</dl>
+
+<span id="Capture-templates"></span><span id="Capture-templates-1"></span><h4 class="subheading">Capture templates</h4>
+
+<p>You can use templates for different types of capture items, and for
+different target locations.  Say you would like to use one template to
+create general TODO entries, and you want to put these entries under
+the heading &lsquo;<samp>Tasks</samp>&rsquo; in your file &lsquo;<samp>~/org/gtd.org</samp>&rsquo;.  Also, a date tree
+in the file &lsquo;<samp>journal.org</samp>&rsquo; should capture journal entries.  A possible
+configuration would look like:
+</p>
+<div class="example lisp">
+<pre class="lisp">(setq org-capture-templates
+      '((&quot;t&quot; &quot;Todo&quot; entry (file+headline &quot;~/org/gtd.org&quot; &quot;Tasks&quot;)
+         &quot;* TODO %?\n  %i\n  %a&quot;)
+        (&quot;j&quot; &quot;Journal&quot; entry (file+datetree &quot;~/org/journal.org&quot;)
+         &quot;* %?\nEntered on %U\n  %i\n  %a&quot;)))
+</pre></div>
+
+<p>If you then press <kbd>t</kbd> from the capture menu, Org will prepare
+the template for you like this:
+</p>
+<div class="example">
+<pre class="example">* TODO
+  [[file:LINK TO WHERE YOU INITIATED CAPTURE]]
+</pre></div>
+
+
+<p>During expansion of the template, special %-escapes<a id="DOCF10" href="#FOOT10"><sup>10</sup></a> allow
+dynamic insertion of content.  Here is a small selection of the
+possibilities, consult the manual for more.
+</p>
+<table>
+<tr><td>&lsquo;<samp>%a</samp>&rsquo;</td><td>annotation, normally the link created with <code>org-store-link</code></td></tr>
+<tr><td>&lsquo;<samp>%i</samp>&rsquo;</td><td>initial content, the region when capture is called with <kbd>C-u</kbd></td></tr>
+<tr><td>&lsquo;<samp>%t</samp>&rsquo;, &lsquo;<samp>%T</samp>&rsquo;</td><td>timestamp, date only, or date and time</td></tr>
+<tr><td>&lsquo;<samp>%u</samp>&rsquo;, &lsquo;<samp>%U</samp>&rsquo;</td><td>like above, but inactive timestamps</td></tr>
+<tr><td>&lsquo;<samp>%?</samp>&rsquo;</td><td>after completing the template, position point here</td></tr>
+</table>
+
+</div>
+<div class="footnote">
+<hr>
+<h4 class="footnotes-heading">Footnotes</h4>
+
+<h5><a id="FOOT9" href="#DOCF9">(9)</a></h5>
+<p>Using capture templates, you get finer control over capture
+locations.  See <a href="#Capture-templates">Capture templates</a>.</p>
+<h5><a id="FOOT10" href="#DOCF10">(10)</a></h5>
+<p>If you need one of these sequences literally, escape the &lsquo;<samp>%</samp>&rsquo;
+with a backslash.</p>
+</div>
+<hr>
+<div class="header">
+<p>
+Next: <a href="Refile-and-Copy.html">Refile and Copy</a>, Up: <a href="Capture-Refile-Archive.html">Capture, Refile, Archive</a> &nbsp; [<a href="index-2.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+</div>
+
+
+
+</body>
+
+<!-- Mirrored from orgmode.org/guide/Capture.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 26 Nov 2022 11:38:10 GMT -->
+</html>

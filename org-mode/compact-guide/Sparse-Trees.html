@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <!-- Created by GNU Texinfo 6.8, https://www.gnu.org/software/texinfo/ --><!-- Mirrored from orgmode.org/guide/Sparse-Trees.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 26 Nov 2022 11:38:10 GMT --><!-- Added by HTTrack -->
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <!-- /Added by HTTrack -->
+    <!-- Copyright (C) 2004-2022  Free Software Foundation, Inc.
+Permission is granted to copy, distribute and/or modify this documentunder the terms of the GNU Free Documentation License, Version 1.3 orany later version published by the Free Software Foundation; with no
+Invariant Sections, with the Front-Cover Texts being "A GNU Manual,"and with the Back-Cover Texts as in (a) below.  A copy of the licenseis included in the section entitled "GNU Free Documentation License."in the full Org manual, which is distributed together with this
+compact guide.(a) The FSF's Back-Cover Text is: "You have the freedom to copy andmodify this GNU manual."
+ -->
+    <title>Sparse Trees (Org Mode Compact Guide)</title>
+    <meta name="description" content="Sparse Trees (Org Mode Compact Guide)">
+    <meta name="keywords" content="Sparse Trees (Org Mode Compact Guide)">
+    <meta name="resource-type" content="document">
+    <meta name="distribution" content="global">
+    <meta name="Generator" content="makeinfo">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link href="index-2.html" rel="start" title="Top">
+    <link href="index-2.html#SEC_Contents" rel="contents" title="Table of Contents">
+    <link href="Document-Structure.html" rel="up" title="Document Structure">
+    <link href="Plain-Lists.html" rel="next" title="Plain Lists">
+    <link href="Structure-Editing.html" rel="prev" title="Structure Editing">
+    <style type="text/css">
+<!--
+a.copiable-anchor {visibility: hidden; text-decoration: none; line-height: 0em}
+a.summary-letter {text-decoration: none}
+blockquote.indentedblock {margin-right: 0em}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+kbd {font-style: oblique}
+pre.display {font-family: inherit}
+pre.format {font-family: inherit}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+span.nolinebreak {white-space: nowrap}
+span.roman {font-family: initial; font-weight: normal}
+span.sansserif {font-family: sans-serif; font-weight: normal}
+span:hover a.copiable-anchor {visibility: visible}
+ul.no-bullet {list-style: none}
+-->
+</style> <link rel="stylesheet" type="text/css" href="https://www.gnu.org/software/emacs/manual.css">
+  </head>
+  <body lang="en">
+    <div class="section" id="Sparse-Trees">
+      <div class="header">
+        <p> Next: <a href="Plain-Lists.html" accesskey="n" rel="next">Plain
+            Lists</a>, Previous: <a href="Structure-Editing.html" accesskey="p"
+            rel="prev">Structure Editing</a>, Up: <a href="Document-Structure.html"
+            accesskey="u" rel="up">Document Structure</a> &nbsp; [<a href="index-2.html#SEC_Contents"
+            title="Table of contents" rel="contents">Contents</a>]</p>
+      </div>
+      <hr> <span id="Sparse-Trees-1"></span>
+      <h3 class="section">2.5 Sparse Trees💡スパース・ツリー</h3>
+      <p>An important feature of Org mode is the ability to construct <em>sparse
+          trees</em> for selected information in an outline tree, so that the
+        entire document is folded as much as possible, but the selected
+        information is made visible along with the headline structure above it<a
+          id="DOCF3" href="#FOOT3"><sup>3</sup></a>. Just try it out and you
+        will see immediately how it works. <br>
+        💡Orgモードの重要な特徴は、選択した情報に対するスパース・ツリーをアウトラインツリー内に構築することで、文書全体はできるだけ折り畳まれるが、
+        選択した情報はその上の見出し構造とともに表示されるようにすることです<a id="DOCF3" href="#FOOT3"><sup>3</sup></a>。
+        試してみれば、その効果がすぐにわかるはずです。</p>
+      <p>Org mode contains several commands creating such trees, all these
+        commands can be accessed through a dispatcher: <br>
+        💡Orgモードには、このようなツリーを作成するコマンドがいくつかあり、これらのコマンドはすべてディスパッチャを通じてアクセスすることができま
+        す。</p>
+      <dl compact="compact">
+        <dt><span><kbd>C-c /</kbd></span></dt>
+        <dd>
+          <p>This prompts for an extra key to select a sparse-tree creating
+            command. <br>
+            💡スパースツリー作成コマンドを選択するための追加キーを求めるプロンプトが表示されます。</p>
+        </dd>
+        <dt><span><kbd>C-c / r</kbd></span></dt>
+        <dd>
+          <p>Occur. Prompts for a regexp and shows a sparse tree with all
+            matches. Each match is also highlighted; the highlights disappear by
+            pressing <kbd>C-c C-c</kbd>. <br>
+            💡出現(?)。正規表現を入力するよう促され、全てのマッチを含むスパース・ツリーを表示する。各マッチもハイライトされます。C-c
+            C-cを押すとハイライトが消えます。<br>
+          </p>
+          <p>The other sparse tree commands select headings based on TODO
+            keywords, tags, or properties and will be discussed later in this
+            manual. <br>
+            💡もう一つのスパース・ツリーコマンドは、TODOキーワード、タグ、またはプロパティに基づいて見出しを選択します。このマニュアルで後ほど
+            説明します。</p>
+        </dd>
+      </dl>
+    </div>
+    <div class="footnote">
+      <hr>
+      <h4 class="footnotes-heading">Footnotes💡脚注</h4>
+      <h5><a id="FOOT3" href="#DOCF3">(3)</a></h5>
+      <p>See also the variable <code>org-show-context-detail</code> to decide
+        how much context is shown around each match.<br>
+        💡org-show-context-detail 変数も参照して、各マッチの周囲に表示されるコンテキストの量を決めてください。</p>
+    </div>
+  </body>
+  <!-- Mirrored from orgmode.org/guide/Sparse-Trees.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 26 Nov 2022 11:38:10 GMT -->
+</html>

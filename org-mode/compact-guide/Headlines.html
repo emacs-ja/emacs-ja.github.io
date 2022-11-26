@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <!-- Created by GNU Texinfo 6.8, https://www.gnu.org/software/texinfo/ --><!-- Mirrored from orgmode.org/guide/Headlines.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 26 Nov 2022 11:38:10 GMT --><!-- Added by HTTrack -->
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <!-- /Added by HTTrack -->
+    <!-- Copyright (C) 2004-2022  Free Software Foundation, Inc.
+Permission is granted to copy, distribute and/or modify this documentunder the terms of the GNU Free Documentation License, Version 1.3 orany later version published by the Free Software Foundation; with noInvariant Sections, with the Front-Cover Texts being "A GNU Manual,"and with the Back-Cover Texts as in (a) below.  A copy of the licenseis included in the section entitled "GNU Free Documentation License."in the full Org manual, which is distributed together with this
+compact guide.(a) The FSF's Back-Cover Text is: "You have the freedom to copy andmodify this GNU manual." -->
+    <title>Headlines (Org Mode Compact Guide)</title>
+    <meta name="description" content="Headlines (Org Mode Compact Guide)">
+    <meta name="keywords" content="Headlines (Org Mode Compact Guide)">
+    <meta name="resource-type" content="document">
+    <meta name="distribution" content="global">
+    <meta name="Generator" content="makeinfo">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link href="index-2.html" rel="start" title="Top">
+    <link href="index-2.html#SEC_Contents" rel="contents" title="Table of Contents">
+    <link href="Document-Structure.html" rel="up" title="Document Structure">
+    <link href="Visibility-Cycling.html" rel="next" title="Visibility Cycling">
+    <style type="text/css">
+<!--
+a.copiable-anchor {visibility: hidden; text-decoration: none; line-height: 0em}
+a.summary-letter {text-decoration: none}
+blockquote.indentedblock {margin-right: 0em}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+kbd {font-style: oblique}
+pre.display {font-family: inherit}
+pre.format {font-family: inherit}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+span.nolinebreak {white-space: nowrap}
+span.roman {font-family: initial; font-weight: normal}
+span.sansserif {font-family: sans-serif; font-weight: normal}
+span:hover a.copiable-anchor {visibility: visible}
+ul.no-bullet {list-style: none}
+-->
+</style> <link rel="stylesheet" type="text/css" href="https://www.gnu.org/software/emacs/manual.css">
+  </head>
+  <body lang="en">
+    <div class="section" id="Headlines">
+      <div class="header">
+        <p> Next: <a href="Visibility-Cycling.html" accesskey="n" rel="next">Visibility
+            Cycling</a>, Up: <a href="Document-Structure.html" accesskey="u" rel="up">Document
+            Structure</a> &nbsp; [<a href="index-2.html#SEC_Contents" title="Table of contents"
+            rel="contents">Contents</a>]</p>
+      </div>
+      <hr> <span id="Headlines-1"></span>
+      <h3 class="section">2.1 Headlines💡見出し</h3>
+      <p>Headlines define the structure of an outline tree. The headlines in Org
+        start on the left margin<a id="DOCF1" href="#FOOT1"><sup>1</sup></a>
+        with one or more stars followed by a space. For example: <br>
+        💡見出しは、アウトラインツリーの構造を定義します。Orgの見出しは、左マージン<a id="DOCF1" href="#FOOT1"><sup>1</sup></a>か
+        ら始まり、1つまたは複数の星とスペースが続きます。例えば以下 のようなものです： </p>
+      <div class="example">
+        <pre class="example">* Top level headline
+** Second level
+*** Third level
+    some text
+*** Third level
+    more text
+* Another top level headline
+</pre></div>
+      <p>Note that a headline named after <code>org-footnote-section</code>,
+        which defaults to ‘<samp>Footnotes</samp>’, is considered as special. A
+        subtree with this headline will be silently ignored by exporting
+        functions. <br>
+        💡org-footnote-section（デフォルトは'Footnotes'）にちなんで名付けられた見出しは、特別なものとみなされることに注
+        意してください。この見出しを持つサブツリーはエクスポート関数によって黙って無視されます。</p>
+      <p>Some people find the many stars too noisy and would prefer an outline
+        that has whitespace followed by a single star as headline starters. See
+        <a href="Miscellaneous.html">Miscellaneous</a> for a setup to realize
+        this. <br>
+        💡人によっては、たくさんの星があるとうるさいと感じ、空白の後に1つの星が続くアウトラインを見出しのスターターとして好むかもしれません。これを実
+        現するための設定は<a href="Miscellaneous.html">Miscellaneous</a>を参照してください。</p>
+    </div>
+    <div class="footnote">
+      <hr>
+      <h4 class="footnotes-heading">Footnotes💡脚注</h4>
+      <h5><a id="FOOT1" href="#DOCF1">(1)</a></h5>
+      <p>See the variable <code>org-special-ctrl-a/e</code> to configure
+        special behavior of <kbd>C-a</kbd> and <kbd>C-e</kbd> in headlines.<br>
+        💡見出しのC-aやC-eの特別な動作を設定するには，変数 org-special-ctrl-a/e を参照してください．</p>
+    </div>
+  </body>
+  <!-- Mirrored from orgmode.org/guide/Headlines.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 26 Nov 2022 11:38:10 GMT -->
+</html>
